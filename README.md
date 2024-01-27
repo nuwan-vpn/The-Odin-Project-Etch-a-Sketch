@@ -28,7 +28,7 @@ This simple web application allows users to create a sketch pad with a customiza
 
 - `index.html`: HTML file containing the structure of the webpage.
 - `style.css`: CSS file for styling the webpage.
-- `script.js`: JavaScript file for creating the grid, handling hover events, and managing the new grid button.
+- `main.js`: JavaScript file for creating the grid, handling hover events, and managing the new grid button.
 
 ## License
 Copyright &copy; 2023 DEP-11. All Rights Reserved. <br>
