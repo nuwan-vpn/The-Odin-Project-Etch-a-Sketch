@@ -56,8 +56,12 @@ function getRandomHSLColor() {
 
     // Combine the components to create an HSL color string
     const randomHSLColor = `hsl(${randomHue}, ${randomSaturation}%, ${randomLightness}%)`;
-
     return randomHSLColor;
+}
+
+function resetBoard(){
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div) => div.style.backgroundColor = "white");
 }
 
 
