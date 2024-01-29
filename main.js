@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){
    createBoard(12);
+//    let popupBtn = document.querySelector("popup")
+
+//    getSize();
 });
 
 function createBoard(size){
@@ -16,3 +19,16 @@ function createBoard(size){
         board.insertAdjacentElement("beforeend", div);
     }
 }
+
+function getSize(){
+    let input = prompt("Enter your desired size of board:");
+    let message = document.querySelector("#message");
+    if(input=="" || input<0 || input>100){
+        message.innerHTML="Please enter a valid number between 1 and 100";
+    } else{
+        message.innerHTML = "Now you can play!";
+        return input;
+    }
+    
+}
+  
