@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
-   createBoard(12);
-//    let popupBtn = document.querySelector("popup")
-
-//    getSize();
+   createBoard(16);
+   let popupBtn = document.querySelector("#popup")
+   popupBtn.addEventListener('click', function(){
+        let size =getSize();
+        createBoard(size)
+   })
 });
 
 function createBoard(size){
@@ -15,7 +17,9 @@ function createBoard(size){
 
     for(let i=0; i<numDivs; i++){
         let div = document.createElement("div");
-        div.style.backgroundColor="yellow";
+        div.addEventListener('mouseover', function(){
+            div.style.backgroundColor="Black";
+        })
         board.insertAdjacentElement("beforeend", div);
     }
 }
