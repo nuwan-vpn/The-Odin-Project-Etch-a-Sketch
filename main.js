@@ -1,9 +1,11 @@
+let color = "black";
+
 document.addEventListener("DOMContentLoaded", function(){
    createBoard(16);
    let popupBtn = document.querySelector("#popup")
    popupBtn.addEventListener('click', function(){
         let size =getSize();
-        createBoard(size)
+        createBoard(size);
    })
 });
 
@@ -17,9 +19,7 @@ function createBoard(size){
 
     for(let i=0; i<numDivs; i++){
         let div = document.createElement("div");
-        div.addEventListener('mouseover', function(){
-            div.style.backgroundColor="Black";
-        })
+        div.addEventListener('mouseover', colorDiv);
         board.insertAdjacentElement("beforeend", div);
     }
 }
@@ -32,7 +32,32 @@ function getSize(){
     } else{
         message.innerHTML = "Now you can play!";
         return input;
+    }    
+}
+
+function colorDiv(){
+    if(color === "random"){
+        this.style.backgroundColor = getRandomHSLColor();
+    } else{
+        this.style.backgroundColor = 'black';
     }
-    
+}
+
+function setColor(colorChoice){
+    color = colorChoice;
 }
   
+
+function getRandomHSLColor() {
+    // Generate random values for hue, saturation, and lightness
+    const randomHue = Math.floor(Math.random() * 360);
+    const randomSaturation = Math.floor(Math.random() * 101); // 0-100 for percentage
+    const randomLightness = Math.floor(Math.random() * 101);
+
+    // Combine the components to create an HSL color string
+    const randomHSLColor = `hsl(${randomHue}, ${randomSaturation}%, ${randomLightness}%)`;
+
+    return randomHSLColor;
+}
+
+
